@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no"/>
+
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChBzspca8mxCoFeeJhW3iPKW6JScj_ung&sensor=false">
+		</script>
+
+		<title>Randomap</title>
+   	
+		<link href='http://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
+
+    	<link href = "style.css" rel = "stylesheet">
+
+	</head>
+	<body>
+		<div id = "wrapper">
+			<nav><div id = "content">hello</div><div id = "reload">Randomize</div></div>
+			<div id = "map-canvas"></div>
+		</div>
+		
+
+	</body>
+
+	<script>
+
+	function randomLat() {
+		var test = (Math.round(Math.random() * 10));
+		if (test < 6) {
+			
+				return (Math.random() * 90).toFixed(2);
+			
+		}
+		else {
+			
+				return (Math.random() * -90).toFixed(2);
+			
+		}
+	}	
+
+	function randomLong() {
+		var test = (Math.round(Math.random() * 10));
+		if (test < 6) {
+			
+				return (Math.random() * 180).toFixed(2);
+			
+		}
+		else {
+			
+				return (Math.random() * -180).toFixed(2);
+			
+		}
+	}	
+
+	ranLat = randomLat();
+	ranLong = randomLong();
+
+	var reload = document.getElementById('reload');
+
+	reload.addEventListener('click', function() {
+		ranLat = randomLat();
+		ranLong = randomLong();
+		initialize();
+		document.querySelector('#content').innerHTML = 'Latitude: ' + ranLat + ' Longitude: ' + ranLong;
+	});
+
+	document.querySelector('#content').innerHTML = 'Latitude: ' + ranLat + ' Longitude: ' + ranLong;
+		
+
+			
+			
+	function initialize() {
+		var mapOptions = {
+			center: new google.maps.LatLng(ranLat, ranLong),
+			zoom: 8
+		};
+
+		var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+		}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+
+
+</html>

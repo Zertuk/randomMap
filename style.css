@@ -1,0 +1,62 @@
+
+html { 
+	height: 100% 
+}
+
+body { 
+	height: 100%; margin: 0; padding: 0;
+	background-color: black;
+}
+
+#wrapper {
+	position: relative;
+	width: 100%;
+}
+
+#map-canvas { 
+	height: 100%;
+	z-index: 1;
+
+}
+
+#reload {
+	border: 1px solid grey;
+	background-color: white;
+	color: black;
+	width: 200px;
+	margin: 0 auto;
+	margin-bottom: 1%;
+	transition: 1s ease 0s;
+	opacity: 0.9;
+
+}
+
+#reload:hover {
+	background-color: black;
+	color: white;
+
+}
+
+#content {
+	width: 400px;
+	background-color: black;
+	color: white;
+	margin: 0 auto;
+	margin-bottom: 1%;
+}
+nav {
+	height: 5%;
+	width: 100%;
+	background-color: none;
+	font-size: 26px;
+	text-align: center;
+	font-family: 'Exo', sans-serif;	
+	color: black;
+	margin-top: 3%;
+	padding-bottom: 1%;
+	position: absolute;
+	z-index: 1000;
+}
+
+
+   
