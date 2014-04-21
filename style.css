@@ -26,14 +26,12 @@ body {
 	width: 200px;
 	margin: 0 auto;
 	margin-bottom: 1%;
-	transition: 1s ease 0s;
 	opacity: 0.9;
 
 }
 
-#reload:hover {
-	background-color: black;
-	color: white;
+#reload:active {
+	background-color: orange;
 
 }
 
